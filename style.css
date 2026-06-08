@@ -1,0 +1,111 @@
+:root {
+    --terminal-color: #0f0; /* Стандартный зеленый */
+}
+
+/* Применяем переменную ко всему */
+body, #output, input, #status-bar {
+    color: var(--terminal-color);
+}
+
+/* Чтобы рамки тоже меняли цвет вместе с текстом */
+.photo-container img {
+    border-color: var(--terminal-color) !important;
+    box-shadow: 0 0 10px var(--terminal-color), inset 0 0 5px var(--terminal-color) !important;
+}
+
+body { 
+    background: #000; 
+    color: var(--terminal-color); 
+    font-family: 'Courier New', Courier, monospace; /* Более "хакерский" шрифт */
+    padding: 20px; 
+    font-size: 24px; /* Увеличили шрифт */
+}
+
+#input { 
+    background: transparent; 
+    border: none; 
+    color: var(--terminal-color); 
+    width: 100%; 
+    outline: none; 
+    font-size: 24px; /* Чтобы поле ввода тоже стало крупнее */
+    font-family: inherit;
+}
+
+#output {
+    margin-bottom: 10px;
+    white-space: pre-wrap; /* Чтобы текст переносился, если он длинный */
+}
+#terminal {
+    text-shadow: 0 0 5px var(--terminal-color); /* Легкое свечение текста */
+}
+#header {
+    color: var(--terminal-color);
+    font-family: 'Courier New', monospace;
+    font-size: 12px;
+    padding: 10px;
+    border-bottom: 1px solid var(--terminal-color);
+    margin-bottom: 20px;
+    background: rgba(0, 255, 0, 0.05);
+}
+.loading-bar {
+    color: var(--terminal-color);
+    font-family: monospace;
+    letter-spacing: 2px;
+}
+.photo-container {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid var(--terminal-color);
+    box-shadow: 0 0 15px var(--terminal-color);
+    display: inline-block;
+}
+
+.photo-container::after {
+    content: " ";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background-color: var(--terminal-color);
+    animation: scan 3s linear infinite;
+}
+
+@keyframes scan {
+    0% { top: -10px; }
+    100% { top: 100%; }
+}
+
+#status-bar {
+    color: var(--terminal-color); /* Вместо конкретного цвета */
+    border-bottom: 1px solid var(--terminal-color); /* Если есть рамка */
+}
+
+#password-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 300px;
+    background: #050505;
+    border: 3px solid var(--terminal-color);
+    padding: 40px;
+    z-index: 1000;
+    display: none;
+    text-align: center;
+    box-shadow: 0 0 20px rgba(0, 255, 0, 0.2);
+}
+
+#modal-pass-input {
+    width: 80%;
+    font-size: 24px;
+    padding: 15px;
+    margin-top: 20px;
+    background: transparent;
+    color: var(--terminal-color);
+    border: 2px solid var(--terminal-color);
+    text-align: center;
+    outline: none;
+    letter-spacing: 10px;
+}

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="status-bar">
+    SYSTEM STATUS: ONLINE | USER: ADMIN | TIME: <span id="clock">00:00</span>
+</div>
+    <div id="header">SYSTEM STATUS: ONLINE | USER: ADMIN</div>
+    <div id="terminal">
+        <div id="output">SYSTEM: LOCKED. ENTER PASSWORD TO CONTINUE...(check README.md)</div>
+<input type="text" id="input" autofocus>
+    </div>
+<script defer src="ui.js"></script>
+<script defer src="main.js"></script>
+<script defer src="commands.js"></script>
+<script defer src="clock.js"></script>
+<div id="password-modal">
+    <p style="color: var(--terminal-color);">[SYSTEM] AUTH_REQUIRED</p>
+    <p style="color: var(--terminal-color);">ENTER ACCESS_KEY:</p>
+    <input type="password" id="modal-pass-input" style="background:transparent; color:var(--terminal-color); border:1px solid var(--terminal-color);">
+</div>
+</body>
+</html>
